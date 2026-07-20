@@ -27,6 +27,18 @@
     [data-head] { position: static !important; box-shadow: none !important; }
     section { break-inside: avoid; }
   }
+  /* ---- Mobile refinements (override inline styles) ---- */
+  @media (max-width: 700px) {
+    /* Header: stack the brand above a compact, horizontally-scrollable nav */
+    [data-head] { flex-direction: column; align-items: stretch !important; gap: 9px !important; padding: 11px 16px !important; }
+    [data-head] > div:first-child { font-size: 11px !important; letter-spacing: .13em !important; line-height: 1.35; }
+    [data-head] nav { gap: 18px !important; flex-wrap: nowrap !important; justify-content: flex-start !important; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; padding-bottom: 2px; scrollbar-width: none; -ms-overflow-style: none; }
+    [data-head] nav::-webkit-scrollbar { display: none; }
+    [data-head] nav a { flex: 0 0 auto; }
+    /* Fun-fact pill cards: tame the huge radius so text clears the curve */
+    [data-pill] { border-radius: 24px !important; padding: 24px 22px !important; gap: 6px !important; }
+    [data-pill] > div > div:last-child { max-width: none !important; }
+  }
 </style>
 </helmet>
 
@@ -82,14 +94,14 @@
   <div data-reveal="" style="max-width:960px;margin:0 auto;">
     <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:26px;text-align:center;">Two Things Worth Knowing</div>
     <div style="display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px);">
-      <div style="display:flex;align-items:center;gap:clamp(20px,3vw,34px);background:#fffdf7;border:1px solid rgba(34,31,26,.10);border-radius:100px;padding:clamp(22px,2.4vw,30px) clamp(28px,3.4vw,46px);box-shadow:0 18px 44px -30px rgba(34,31,26,.5);flex-wrap:wrap;">
+      <div data-pill="" style="display:flex;align-items:center;gap:clamp(20px,3vw,34px);background:#fffdf7;border:1px solid rgba(34,31,26,.10);border-radius:100px;padding:clamp(22px,2.4vw,30px) clamp(28px,3.4vw,46px);box-shadow:0 18px 44px -30px rgba(34,31,26,.5);flex-wrap:wrap;">
         <div style="flex:0 0 auto;">
           <div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#3f5540;margin-bottom:8px;">Fun Fact · The Peak</div>
           <div style="font-family:'DM Serif Display';font-size:clamp(22px,2.4vw,29px);line-height:1.1;max-width:220px;">Named for a genuine head-scratcher</div>
         </div>
         <p style="flex:1 1 320px;font-size:clamp(15px,1.35vw,18px);line-height:1.7;color:#3f3a32;margin:0;">Legend has it Quandary Peak got its name when 19th-century miners found an unfamiliar ore near its base and were left in a <em style="font-style:italic;">quandary</em> over what it actually was. The name stuck — and today it's one of Colorado's most-climbed 14ers, thanks to that straightforward East Ridge.</p>
       </div>
-      <div style="display:flex;align-items:center;gap:clamp(20px,3vw,34px);background:#fffdf7;border:1px solid rgba(34,31,26,.10);border-radius:100px;padding:clamp(22px,2.4vw,30px) clamp(28px,3.4vw,46px);box-shadow:0 18px 44px -30px rgba(34,31,26,.5);flex-wrap:wrap;">
+      <div data-pill="" style="display:flex;align-items:center;gap:clamp(20px,3vw,34px);background:#fffdf7;border:1px solid rgba(34,31,26,.10);border-radius:100px;padding:clamp(22px,2.4vw,30px) clamp(28px,3.4vw,46px);box-shadow:0 18px 44px -30px rgba(34,31,26,.5);flex-wrap:wrap;">
         <div style="flex:0 0 auto;">
           <div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#9a5a30;margin-bottom:8px;">Fun Fact · The Town</div>
           <div style="font-family:'DM Serif Display';font-size:clamp(22px,2.4vw,29px);line-height:1.1;max-width:220px;">A gold-rush town in the sky</div>
