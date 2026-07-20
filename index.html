@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Caveat:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #f4efe3; color: #221f1a; font-family: 'Spectral', Georgia, serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  img { display: block; }
+  a { color: #9a5a30; text-decoration: none; }
+  a:hover { color: #7c4622; }
+  ::selection { background: #b0812c; color: #fff; }
+  @keyframes bobcue { 0%,100% { transform: translateY(0); opacity:.9;} 50% { transform: translateY(7px); opacity:.5;} }
+  @keyframes driftin { from { opacity:0; transform: translateY(30px);} to { opacity:1; transform:none;} }
+  @media print {
+    [data-reveal] { opacity: 1 !important; transform: none !important; }
+    [data-progress] { display: none !important; }
+    [data-head] { position: static !important; box-shadow: none !important; }
+    section { break-inside: avoid; }
+  }
+</style>
+</helmet>
+
+<div data-progress="" style="position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#3f5540,#9a5a30);z-index:120;"></div>
+
+<header data-head="" style="position:sticky;top:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px clamp(18px,4vw,44px);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);background:rgba(244,239,227,.86);border-bottom:1px solid rgba(34,31,26,.10);transition:box-shadow .3s ease;">
+  <div style="font-family:'Spectral';font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:#3f5540;">The Mountain GOATs · Field Journal</div>
+  <nav style="display:flex;gap:clamp(12px,2vw,26px);font-family:'Spectral';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11px;">
+    <a href="#why" style="color:#5f574a;">Objective</a>
+    <a href="#getting-there" style="color:#5f574a;">Getting There</a>
+    <a href="#trail" style="color:#5f574a;">The Trail</a>
+    <a href="#celebration" style="color:#5f574a;">Celebration</a>
+    <a href="#climb" style="color:#5f574a;">The Climb</a>
+    <a href="#summit" style="color:#5f574a;">Summit</a>
+    <a href="#crew" style="color:#5f574a;">The Crew</a>
+    <a href="#album" style="color:#5f574a;">Album</a>
+  </nav>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section style="position:relative;min-height:calc(100vh - 52px);display:flex;align-items:flex-end;background-image:url('uploads/Hike/HikingSnaps/IMG_7650.JPG');background-size:cover;background-position:center 40%;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,30,.34) 0%,rgba(20,24,30,.05) 30%,rgba(18,20,24,.20) 55%,rgba(15,16,20,.78) 100%);"></div>
+  <div style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px) clamp(46px,7vw,86px);color:#fdfaf2;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.34em;text-transform:uppercase;font-size:clamp(11px,1.3vw,14px);color:#f0d59a;margin-bottom:18px;">Quandary Peak · 14,265 ft · Colorado</div>
+    <h1 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(46px,9vw,116px);line-height:.94;margin:0 0 22px;letter-spacing:-.01em;text-shadow:0 2px 30px rgba(0,0,0,.35);">Two Legends,<br>One Summit</h1>
+    <p style="font-family:'Spectral';font-weight:400;font-size:clamp(18px,2.1vw,26px);line-height:1.5;max-width:660px;margin:0 0 26px;color:#f4ede0;text-shadow:0 1px 14px rgba(0,0,0,.4);">The morning the Mountain GOATs climbed a Colorado 14er to celebrate Raja Kanuri turning <em style="font-style:italic;color:#f3d79c;">50</em> — and America turning <em style="font-style:italic;color:#f3d79c;">250</em>.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 22px;font-family:'Spectral';font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#e9e0cf;">
+      <span>Filed from 14,265 ft</span><span style="opacity:.5;">·</span>
+      <span>Breckenridge, Colorado</span><span style="opacity:.5;">·</span>
+      <span>Summer 2026</span>
+    </div>
+  </div>
+  <div style="position:absolute;left:50%;bottom:20px;transform:translateX(-50%);color:#f0d59a;font-family:'Spectral';letter-spacing:.24em;text-transform:uppercase;font-size:10px;text-align:center;">
+    <div style="margin-bottom:6px;">Scroll</div>
+    <div style="animation:bobcue 1.8s ease-in-out infinite;font-size:16px;">↓</div>
+  </div>
+</section>
+
+<!-- ===================== STAT BAR ===================== -->
+<section style="background:#221f1a;color:#f4efe3;">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(26px,4vw,40px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:26px 20px;">
+    <div><div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#c9a45f;margin-bottom:7px;">Round trip</div><div style="font-family:'DM Serif Display';font-size:clamp(26px,3vw,38px);line-height:1;">6.75 mi</div></div>
+    <div><div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#c9a45f;margin-bottom:7px;">Elevation gain</div><div style="font-family:'DM Serif Display';font-size:clamp(26px,3vw,38px);line-height:1;">3,415 ft</div></div>
+    <div><div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#c9a45f;margin-bottom:7px;">Trailhead</div><div style="font-family:'DM Serif Display';font-size:clamp(26px,3vw,38px);line-height:1;">10,850 ft</div></div>
+    <div><div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#c9a45f;margin-bottom:7px;">Summit</div><div style="font-family:'DM Serif Display';font-size:clamp(26px,3vw,38px);line-height:1;">14,265 ft</div></div>
+    <div><div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#c9a45f;margin-bottom:7px;">Difficulty</div><div style="font-family:'DM Serif Display';font-size:clamp(26px,3vw,38px);line-height:1;">Class 1–2</div></div>
+    <div><div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#c9a45f;margin-bottom:7px;">CO 14er rank</div><div style="font-family:'DM Serif Display';font-size:clamp(26px,3vw,38px);line-height:1;">#13</div></div>
+  </div>
+</section>
+
+<!-- ===================== FUN FACTS ===================== -->
+<section style="padding:clamp(52px,7vw,88px) clamp(20px,5vw,56px);">
+  <div data-reveal="" style="max-width:960px;margin:0 auto;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:26px;text-align:center;">Two Things Worth Knowing</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px);">
+      <div style="display:flex;align-items:center;gap:clamp(20px,3vw,34px);background:#fffdf7;border:1px solid rgba(34,31,26,.10);border-radius:100px;padding:clamp(22px,2.4vw,30px) clamp(28px,3.4vw,46px);box-shadow:0 18px 44px -30px rgba(34,31,26,.5);flex-wrap:wrap;">
+        <div style="flex:0 0 auto;">
+          <div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#3f5540;margin-bottom:8px;">Fun Fact · The Peak</div>
+          <div style="font-family:'DM Serif Display';font-size:clamp(22px,2.4vw,29px);line-height:1.1;max-width:220px;">Named for a genuine head-scratcher</div>
+        </div>
+        <p style="flex:1 1 320px;font-size:clamp(15px,1.35vw,18px);line-height:1.7;color:#3f3a32;margin:0;">Legend has it Quandary Peak got its name when 19th-century miners found an unfamiliar ore near its base and were left in a <em style="font-style:italic;">quandary</em> over what it actually was. The name stuck — and today it's one of Colorado's most-climbed 14ers, thanks to that straightforward East Ridge.</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(20px,3vw,34px);background:#fffdf7;border:1px solid rgba(34,31,26,.10);border-radius:100px;padding:clamp(22px,2.4vw,30px) clamp(28px,3.4vw,46px);box-shadow:0 18px 44px -30px rgba(34,31,26,.5);flex-wrap:wrap;">
+        <div style="flex:0 0 auto;">
+          <div style="font-family:'Spectral';font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#9a5a30;margin-bottom:8px;">Fun Fact · The Town</div>
+          <div style="font-family:'DM Serif Display';font-size:clamp(22px,2.4vw,29px);line-height:1.1;max-width:220px;">A gold-rush town in the sky</div>
+        </div>
+        <p style="flex:1 1 320px;font-size:clamp(15px,1.35vw,18px);line-height:1.7;color:#3f3a32;margin:0;">Breckenridge was born in an 1859 gold rush and sits at roughly 9,600 feet — one of the highest incorporated towns in North America. In 1887 a miner nearby unearthed "Tom's Baby," a 13-pound gold nugget still among the largest ever found in Colorado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE WHY ===================== -->
+<section id="why" style="padding:clamp(20px,4vw,52px) clamp(20px,5vw,56px) clamp(64px,10vw,120px);">
+  <div data-reveal="" style="max-width:720px;margin:0 auto;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:16px;">01 — The Objective</div>
+    <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 26px;letter-spacing:-.01em;">Hike Quandary Peak</h2>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0 0 22px;">The mission was simple to say and hard to do: start in Breckenridge and stand on the summit of <strong style="font-weight:600;">Quandary Peak</strong> — at <strong style="font-weight:600;">14,265 feet</strong>, one of Colorado's 58 “fourteeners” and the 13th-highest peak in the state.</p>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0 0 22px;">Getting to the top of a 14er is never a given. Of everyone who sets out on one, only a fraction actually summit — the rest are turned back by altitude sickness, weather, or legs that simply run out. It takes real preparation: acclimatizing to the thin air, an alpine start before the afternoon storms build, steady pacing, and the will to keep climbing when every ten steps demands a breather.</p>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0;">For us that meant roughly <strong style="font-weight:600;">3,415 feet of gain over 6.75 miles</strong> round trip — from a 10,850-ft trailhead to the roof of the Tenmile Range.</p>
+  </div>
+
+  <figure data-reveal="" style="max-width:1080px;margin:clamp(40px,6vw,72px) auto 0;">
+    <img src="uploads/Hike/HikingPeak-nobg.png" alt="Trail profile: Breckenridge to Quandary Peak summit" style="width:100%;height:auto;">
+    <figcaption data-note="" style="text-align:center;font-family:'Caveat';font-size:clamp(19px,2.2vw,26px);color:#9a5a30;margin-top:16px;">From Breckenridge (9,600 ft) to the summit — the full elevation profile of the climb.</figcaption>
+  </figure>
+
+  <div data-reveal="" style="max-width:720px;margin:clamp(44px,6vw,72px) auto 0;border-left:3px solid #3f5540;padding:8px 0 8px 28px;">
+    <p style="font-family:'DM Serif Display';font-style:italic;font-size:clamp(24px,3.2vw,38px);line-height:1.25;margin:0;color:#221f1a;">"We didn't come to Colorado for the cake. We came to earn it — one switchback at a time."</p>
+  </div>
+</section>
+
+<!-- ===================== GETTING THERE ===================== -->
+<section id="getting-there" style="background:#ece3d0;padding:clamp(64px,10vw,120px) clamp(20px,5vw,56px);">
+  <div data-reveal="" style="max-width:720px;margin:0 auto;text-align:center;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:16px;">02 — Getting There</div>
+    <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 22px;">All paths lead to Breckenridge</h2>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0 auto;max-width:620px;">The crew flew in from all over the map — coast to coast, mountain time to island time — converging on one small Rocky Mountain town at 9,600 feet.</p>
+  </div>
+
+  <figure data-reveal="" style="max-width:1080px;margin:clamp(36px,5vw,60px) auto 0;">
+    <img src="uploads/Hike/Map-nobg.png" alt="Journey to the Rockies map" style="width:100%;height:auto;">
+  </figure>
+
+  <div data-reveal="" style="max-width:900px;margin:clamp(34px,4vw,50px) auto 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Seattle</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">San Francisco</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Phoenix</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Dallas</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Minneapolis</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Chicago</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Boston</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Newark</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Miami</span>
+    <span style="font-family:'Spectral';font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#4a4238;background:#f6f1e6;border:1px solid rgba(34,31,26,.14);border-radius:100px;padding:8px 16px;">Hawaii</span>
+    <span style="font-family:'Spectral';font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#fffdf7;background:#3f5540;border:1px solid #3f5540;border-radius:100px;padding:8px 18px;">→ Breckenridge, CO</span>
+  </div>
+</section>
+
+<!-- ===================== THE TRAIL BY NUMBERS ===================== -->
+<section id="trail" style="padding:clamp(64px,10vw,120px) clamp(20px,5vw,56px);">
+  <div data-reveal="" style="max-width:720px;margin:0 auto;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:16px;">03 — The Trail, By the Numbers</div>
+    <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 22px;">Straight up the East Ridge</h2>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0;">Quandary's East Ridge is the standard route: a burly, honest climb that gains nearly 3,500 feet in a little over three miles. No scrambling required, but the air gets thin and the last mile is all rock. Here's the profile from town to top.</p>
+  </div>
+
+  <figure data-reveal="" style="max-width:1080px;margin:clamp(36px,5vw,60px) auto 0;">
+    <img src="uploads/Hike/QuandaryPeakHiking-Levels-nobg.png" alt="Quandary Peak hiking levels and difficulty" style="width:100%;height:auto;">
+    <figcaption data-note="" style="text-align:center;font-family:'Caveat';font-size:clamp(19px,2.2vw,26px);color:#9a5a30;margin-top:16px;">Four levels, one summit — the difficulty breakdown we studied the night before.</figcaption>
+  </figure>
+</section>
+
+<!-- ===================== CELEBRATION ===================== -->
+<section id="celebration" style="padding:clamp(64px,10vw,120px) clamp(20px,5vw,56px);">
+  <div data-reveal="" style="max-width:720px;margin:0 auto;text-align:center;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:16px;">04 — Celebration</div>
+    <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 22px;">Two legends are born</h2>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0 auto;max-width:620px;">The whole reason we were up there. Fifty years ago, Raja “King” Kanuri entered the world — and two hundred fifty years ago, so did the United States of America. Two legends, exactly two centuries apart, and one very good excuse for matching crown t-shirts and a mountain.</p>
+  </div>
+
+  <figure data-reveal="" style="max-width:1040px;margin:clamp(40px,6vw,72px) auto 0;">
+    <img src="uploads/Hike/Legends-crop.png" alt="Two Living Legends Are Born, 200 years apart" style="width:100%;height:auto;mix-blend-mode:multiply;">
+    <figcaption data-note="" style="text-align:center;font-family:'Caveat';font-size:clamp(19px,2.2vw,26px);color:#9a5a30;margin-top:16px;">Two living legends, born 200 years apart — the official trip manifesto.</figcaption>
+  </figure>
+
+  <figure data-reveal="" style="max-width:1080px;margin:clamp(28px,4vw,44px) auto 0;">
+    <img src="uploads/Hike/Celebration.jpg" alt="The whole group in Kanuri 50th Birthday shirts at the Breckenridge Welcome Center" style="width:100%;height:auto;border-radius:6px;box-shadow:0 24px 60px -30px rgba(34,31,26,.55);border:1px solid rgba(34,31,26,.08);">
+    <figcaption data-note="" style="text-align:center;font-family:'Caveat';font-size:clamp(19px,2.2vw,26px);color:#9a5a30;margin-top:16px;">The Kanuri 50th crew, crowns on, at the Breckenridge Welcome Center.</figcaption>
+  </figure>
+</section>
+
+<!-- ===================== THE CLIMB — STAGES ===================== -->
+<section id="climb" style="background:#221f1a;color:#f4efe3;padding:clamp(64px,10vw,120px) 0;">
+  <div data-reveal="" style="max-width:720px;margin:0 auto clamp(48px,7vw,84px);padding:0 clamp(20px,5vw,56px);text-align:center;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#c9a45f;margin-bottom:16px;">05 — The Climb</div>
+    <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 20px;color:#fdfaf2;">Four stages to the top</h2>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#cfc6b4;margin:0;">Forest, then talus, then a long airy ridge, then the final rocky push. Here's how the day unfolded, stage by stage.</p>
+  </div>
+
+  <!-- Stage 1 -->
+  <div data-reveal="" style="max-width:1180px;margin:0 auto clamp(56px,7vw,90px);padding:0 clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center;">
+    <div>
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;">
+        <span style="font-family:'DM Serif Display';font-size:clamp(42px,6vw,72px);line-height:1;color:#3f5540;">01</span>
+        <span style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#c9a45f;">Easy · Class 1</span>
+      </div>
+      <h3 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(26px,3.4vw,40px);line-height:1.05;margin:0 0 16px;color:#fdfaf2;">Lower Forest Trail</h3>
+      <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.72;color:#cfc6b4;margin:0 0 14px;">We laced up in the dark at the trailhead — 10,850 feet, already higher than most mountains east of here. The first stretch is a fair grade through dense conifer forest, headlamps bobbing, everyone still fresh and far too talkative.</p>
+      <p data-note="" style="font-family:'Caveat';font-size:clamp(19px,2vw,24px);color:#c9a45f;margin:0;">Parking reservation required — booked weeks ahead at HikeQuandary.com.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <img src="uploads/Hike/HikingSnaps/IMG_7491.JPG" alt="Trailhead sign in the forest" style="width:100%;height:100%;object-fit:cover;border-radius:5px;grid-row:span 2;box-shadow:0 18px 40px -22px rgba(0,0,0,.6);">
+      <img src="uploads/Hike/HikingSnaps/IMG_7499.JPG" alt="Sunrise over the pines" style="width:100%;height:100%;object-fit:cover;border-radius:5px;box-shadow:0 18px 40px -22px rgba(0,0,0,.6);">
+      <div style="background:#2c2822;border:1px solid rgba(201,164,95,.25);border-radius:5px;padding:16px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:'Spectral';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:10px;color:#c9a45f;margin-bottom:6px;">Dawn start</div>
+        <div style="font-family:'DM Serif Display';font-size:clamp(22px,2.4vw,30px);line-height:1;color:#fdfaf2;">~5:00 AM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage 2 -->
+  <div data-reveal="" style="max-width:1180px;margin:0 auto clamp(56px,7vw,90px);padding:0 clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center;">
+    <img src="uploads/Hike/HikingSnaps/IMG_7526.JPG" alt="Climbing toward the ridge above treeline" style="width:100%;height:100%;max-height:520px;object-fit:cover;border-radius:5px;box-shadow:0 18px 40px -22px rgba(0,0,0,.6);order:2;">
+    <div style="order:1;">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;">
+        <span style="font-family:'DM Serif Display';font-size:clamp(42px,6vw,72px);line-height:1;color:#9a5a30;">02</span>
+        <span style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#c9a45f;">Strenuous · Class 1</span>
+      </div>
+      <h3 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(26px,3.4vw,40px);line-height:1.05;margin:0 0 16px;color:#fdfaf2;">Approach to the East Ridge</h3>
+      <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.72;color:#cfc6b4;margin:0 0 14px;">Then the trail remembers what it is. This stretch packs a punch — roughly 1,300 feet of gain in nine-tenths of a mile. The forest thins, the trees shrink, and suddenly you break above treeline (~12,000 ft) to the whole Tenmile Range glowing in the sunrise behind you.</p>
+      <p data-note="" style="font-family:'Caveat';font-size:clamp(19px,2vw,24px);color:#c9a45f;margin:0;">This is where the legs wake up and the conversation stops.</p>
+    </div>
+  </div>
+
+  <!-- Stage 3 -->
+  <div data-reveal="" style="max-width:1180px;margin:0 auto clamp(56px,7vw,90px);padding:0 clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center;">
+    <div>
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;">
+        <span style="font-family:'DM Serif Display';font-size:clamp(42px,6vw,72px);line-height:1;color:#3f5540;">03</span>
+        <span style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#c9a45f;">Moderate · Class 1</span>
+      </div>
+      <h3 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(26px,3.4vw,40px);line-height:1.05;margin:0 0 16px;color:#fdfaf2;">East Ridge Traverse</h3>
+      <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.72;color:#cfc6b4;margin:0 0 14px;">The reward for the grind: a relatively flat, broad ridge with views that go on forever. This is prime mountain-goat country, and sure enough we got our namesake sighting — a big billy picking his way across the talus, entirely unbothered. Keep your distance; it's their mountain.</p>
+      <p data-note="" style="font-family:'Caveat';font-size:clamp(19px,2vw,24px);color:#c9a45f;margin:0;">The Mountain GOATs, meeting an actual mountain goat.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <img src="uploads/Hike/HikingSnaps/IMG_7555.JPG" alt="Mountain goat on the ridge" style="width:100%;height:100%;object-fit:cover;border-radius:5px;grid-column:span 2;box-shadow:0 18px 40px -22px rgba(0,0,0,.6);">
+      <img src="uploads/Hike/HikingSnaps/IMG_7602.JPG" alt="Broad tundra ridge toward the summit" style="width:100%;height:100%;object-fit:cover;border-radius:5px;grid-column:span 2;max-height:260px;box-shadow:0 18px 40px -22px rgba(0,0,0,.6);">
+    </div>
+  </div>
+
+  <!-- Stage 4 -->
+  <div data-reveal="" style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center;">
+    <img src="uploads/Hike/HikingSnaps/IMG_7562.JPG" alt="Raja on the upper talus slope" style="width:100%;height:100%;max-height:520px;object-fit:cover;border-radius:5px;box-shadow:0 18px 40px -22px rgba(0,0,0,.6);order:2;">
+    <div style="order:1;">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;">
+        <span style="font-family:'DM Serif Display';font-size:clamp(42px,6vw,72px);line-height:1;color:#9a5a30;">04</span>
+        <span style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#c9a45f;">Strenuous · Class 2</span>
+      </div>
+      <h3 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(26px,3.4vw,40px);line-height:1.05;margin:0 0 16px;color:#fdfaf2;">The Summit Push</h3>
+      <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.72;color:#cfc6b4;margin:0 0 14px;">The final thousand feet up the narrow upper ridge — all loose rock, thin air, and stubbornness. Every ten steps you stop, breathe, and pretend you're admiring the view. Fitness and weather awareness both matter here; the afternoon storms are famous, which is exactly why we started before dawn.</p>
+      <p data-note="" style="font-family:'Caveat';font-size:clamp(19px,2vw,24px);color:#c9a45f;margin:0;">The birthday boy, leading from the front.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SUMMIT ===================== -->
+<section id="summit" style="position:relative;">
+  <div style="position:relative;min-height:78vh;display:flex;align-items:center;background-image:url('uploads/IMG_7656.jpg');background-size:cover;background-position:center 38%;">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,17,22,.30),rgba(15,17,22,.55));"></div>
+    <div data-reveal="" style="position:relative;max-width:820px;margin:0 auto;padding:clamp(50px,8vw,90px) clamp(20px,5vw,56px);text-align:center;color:#fdfaf2;">
+      <div style="font-family:'Spectral';font-weight:600;letter-spacing:.3em;text-transform:uppercase;font-size:13px;color:#f0d59a;margin-bottom:18px;">06 — Summit · 14,265 ft</div>
+      <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(40px,7vw,86px);line-height:.98;margin:0 0 22px;text-shadow:0 2px 24px rgba(0,0,0,.4);">We made it.</h2>
+      <p style="font-size:clamp(18px,2vw,24px);line-height:1.6;color:#f0e9db;margin:0 auto;max-width:620px;text-shadow:0 1px 12px rgba(0,0,0,.4);">Roughly four hours and 3,415 vertical feet after the trailhead, the whole crew stood on the thirteenth-highest point in Colorado. Blue sky, no storms, and a birthday nobody will forget.</p>
+    </div>
+  </div>
+
+  <div style="background:#f4efe3;padding:clamp(48px,7vw,88px) clamp(20px,5vw,56px);">
+    <div data-reveal="" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <figure style="margin:0;">
+        <img src="uploads/Hike/HikingSnaps/IMG_7620.JPG" alt="The crew on the summit ridge" style="width:100%;height:300px;object-fit:cover;border-radius:5px;box-shadow:0 18px 44px -24px rgba(34,31,26,.55);">
+        <figcaption data-note="" style="font-family:'Caveat';font-size:clamp(18px,2vw,23px);color:#9a5a30;margin-top:10px;">Single file along the summit ridge, valley a vertical mile below.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="uploads/Hike/HikingSnaps/IMG_7631.JPG" alt="Group resting above the valley" style="width:100%;height:300px;object-fit:cover;border-radius:5px;box-shadow:0 18px 44px -24px rgba(34,31,26,.55);">
+        <figcaption data-note="" style="font-family:'Caveat';font-size:clamp(18px,2vw,23px);color:#9a5a30;margin-top:10px;">A well-earned rest on the way down.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="uploads/Hike/HikingSnaps/IMG_7650.JPG" alt="Summit panorama" style="width:100%;height:300px;object-fit:cover;border-radius:5px;box-shadow:0 18px 44px -24px rgba(34,31,26,.55);">
+        <figcaption data-note="" style="font-family:'Caveat';font-size:clamp(18px,2vw,23px);color:#9a5a30;margin-top:10px;">Top of the world, Tenmile Range in every direction.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="uploads/IMG_7664.jpg" alt="Two friends celebrating on the summit" style="width:100%;height:300px;object-fit:cover;border-radius:5px;box-shadow:0 18px 44px -24px rgba(34,31,26,.55);">
+        <figcaption data-note="" style="font-family:'Caveat';font-size:clamp(18px,2vw,23px);color:#9a5a30;margin-top:10px;">Jhai Amaraavathi .</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="uploads/IMG_7636.jpg" alt="On the summit with the valley far below" style="width:100%;height:300px;object-fit:cover;border-radius:5px;box-shadow:0 18px 44px -24px rgba(34,31,26,.55);">
+        <figcaption data-note="" style="font-family:'Caveat';font-size:clamp(18px,2vw,23px);color:#9a5a30;margin-top:10px;">Breckenridge a vertical mile below, storms building on the horizon.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE CREW ===================== -->
+<section id="crew" style="padding:clamp(64px,10vw,120px) clamp(20px,5vw,56px);">
+  <div data-reveal="" style="max-width:720px;margin:0 auto;text-align:center;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:16px;">07 — The Crew</div>
+    <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 22px;">The Mountain GOATs</h2>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0 auto;max-width:620px;">A tight-knit band of Mountain GOATs — together, this group has summited more than 20 fourteeners. Quandary was simply the latest, and the most worth celebrating.</p>
+  </div>
+
+  <figure data-reveal="" style="max-width:1080px;margin:clamp(40px,5vw,64px) auto 0;">
+    <img src="uploads/Hike/MountainGOATs.png" alt="Mountain GOATs banner sketch" style="width:100%;height:auto;mix-blend-mode:multiply;">
+    <figcaption data-note="" style="text-align:center;font-family:'Caveat';font-size:clamp(18px,2vw,24px);color:#9a5a30;margin-top:12px;">Greatest Of All Time</figcaption>
+  </figure>
+
+  <div data-reveal="" style="max-width:900px;margin:clamp(40px,5vw,64px) auto 0;display:grid;grid-template-columns:30% 70%;gap:clamp(24px,4vw,44px);align-items:center;">
+    <img src="uploads/Hike/RajaProfilePic.png" alt="Raja Kanuri portrait" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 20px 44px -22px rgba(34,31,26,.55);border:5px solid #fffdf7;">
+    <div>
+      <div style="font-family:'DM Serif Display';font-size:clamp(26px,3.2vw,38px);line-height:1.05;">'King' Raja Kanuri</div>
+      <div style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-top:8px;">The Legend · Age 50</div>
+      <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:#3f3a32;margin:16px 0 0;">Fifty years young and first to the summit. Here's to the next fourteen thousand feet — happy birthday, Raja.</p>
+    </div>
+  </div>
+
+  <div data-reveal="" style="max-width:900px;margin:clamp(40px,5vw,60px) auto 0;display:flex;flex-direction:column;gap:clamp(28px,3.5vw,44px);">
+    <div style="display:grid;grid-template-columns:30% 70%;gap:clamp(24px,4vw,44px);align-items:center;">
+      <img src="uploads/VenkatProfilePic-1.png" alt="Venkat portrait" style="width:100%;aspect-ratio:1;object-fit:cover;object-position:52% 30%;border-radius:50%;box-shadow:0 20px 44px -22px rgba(34,31,26,.55);border:5px solid #fffdf7;">
+      <div>
+        <div style="font-family:'DM Serif Display';font-size:clamp(26px,3.2vw,38px);line-height:1.05;color:#3a352d;">Venkat</div>
+        <div style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-top:8px;">20+ Fourteeners</div>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:#7c7263;margin:16px 0 0;">Story coming soon.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:30% 70%;gap:clamp(24px,4vw,44px);align-items:center;">
+      <div style="width:100%;aspect-ratio:1;border-radius:50%;border:2px dashed rgba(34,31,26,.28);background:rgba(255,253,247,.5);display:flex;align-items:center;justify-content:center;color:#9a5a30;font-size:32px;">＋</div>
+      <div>
+        <div style="font-family:'DM Serif Display';font-size:clamp(26px,3.2vw,38px);line-height:1.05;color:#7c7263;">Climber name</div>
+        <div style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-top:8px;">20+ Fourteeners</div>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:#7c7263;margin:16px 0 0;">Name and story coming soon.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:30% 70%;gap:clamp(24px,4vw,44px);align-items:center;">
+      <div style="width:100%;aspect-ratio:1;border-radius:50%;border:2px dashed rgba(34,31,26,.28);background:rgba(255,253,247,.5);display:flex;align-items:center;justify-content:center;color:#9a5a30;font-size:32px;">＋</div>
+      <div>
+        <div style="font-family:'DM Serif Display';font-size:clamp(26px,3.2vw,38px);line-height:1.05;color:#7c7263;">Climber name</div>
+        <div style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-top:8px;">20+ Fourteeners</div>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:#7c7263;margin:16px 0 0;">Name and story coming soon.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:30% 70%;gap:clamp(24px,4vw,44px);align-items:center;">
+      <div style="width:100%;aspect-ratio:1;border-radius:50%;border:2px dashed rgba(34,31,26,.28);background:rgba(255,253,247,.5);display:flex;align-items:center;justify-content:center;color:#9a5a30;font-size:32px;">＋</div>
+      <div>
+        <div style="font-family:'DM Serif Display';font-size:clamp(26px,3.2vw,38px);line-height:1.05;color:#7c7263;">Climber name</div>
+        <div style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-top:8px;">20+ Fourteeners</div>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:#7c7263;margin:16px 0 0;">Name and story coming soon.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:30% 70%;gap:clamp(24px,4vw,44px);align-items:center;">
+      <div style="width:100%;aspect-ratio:1;border-radius:50%;border:2px dashed rgba(34,31,26,.28);background:rgba(255,253,247,.5);display:flex;align-items:center;justify-content:center;color:#9a5a30;font-size:32px;">＋</div>
+      <div>
+        <div style="font-family:'DM Serif Display';font-size:clamp(26px,3.2vw,38px);line-height:1.05;color:#7c7263;">Climber name</div>
+        <div style="font-family:'Spectral';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-top:8px;">20+ Fourteeners</div>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:#7c7263;margin:16px 0 0;">Name and story coming soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRAIL ALBUM ===================== -->
+<section id="album" style="background:#ece3d0;padding:clamp(64px,10vw,120px) clamp(20px,5vw,56px);">
+  <div data-reveal="" style="max-width:720px;margin:0 auto;text-align:center;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#9a5a30;margin-bottom:16px;">08 — Trail Album</div>
+    <h2 style="font-family:'DM Serif Display';font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 22px;">More from the mountain</h2>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#3f3a32;margin:0 auto;max-width:600px;">A growing collection of snaps from the crew. Got more from the day? There's room here for them.</p>
+  </div>
+
+  <div data-reveal="" style="max-width:1180px;margin:clamp(36px,5vw,60px) auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
+    <figure style="margin:0;">
+      <img src="uploads/IMG_7534.jpg" alt="Hiker on the talus below treeline" style="width:100%;height:240px;object-fit:cover;border-radius:5px;box-shadow:0 16px 40px -24px rgba(34,31,26,.5);">
+      <figcaption data-note="" style="font-family:'Caveat';font-size:clamp(17px,1.9vw,22px);color:#9a5a30;margin-top:9px;">Picking a line up through the boulders.</figcaption>
+    </figure>
+    <figure style="margin:0;">
+      <img src="uploads/Hike/HikingSnaps/IMG_7626.JPG" alt="On the summit ridge" style="width:100%;height:240px;object-fit:cover;border-radius:5px;box-shadow:0 16px 40px -24px rgba(34,31,26,.5);">
+      <figcaption data-note="" style="font-family:'Caveat';font-size:clamp(17px,1.9vw,22px);color:#9a5a30;margin-top:9px;">Bundled up against the wind on the upper ridge.</figcaption>
+    </figure>
+    <div style="height:240px;border:2px dashed rgba(34,31,26,.22);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;background:rgba(255,253,247,.4);">
+      <div style="font-size:26px;color:#9a5a30;line-height:1;margin-bottom:10px;">＋</div>
+      <div style="font-family:'Spectral';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#7c7263;">Your snap here</div>
+    </div>
+    <div style="height:240px;border:2px dashed rgba(34,31,26,.22);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;background:rgba(255,253,247,.4);">
+      <div style="font-size:26px;color:#9a5a30;line-height:1;margin-bottom:10px;">＋</div>
+      <div style="font-family:'Spectral';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#7c7263;">Your snap here</div>
+    </div>
+    <div style="height:240px;border:2px dashed rgba(34,31,26,.22);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;background:rgba(255,253,247,.4);">
+      <div style="font-size:26px;color:#9a5a30;line-height:1;margin-bottom:10px;">＋</div>
+      <div style="font-family:'Spectral';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#7c7263;">Your snap here</div>
+    </div>
+    <div style="height:240px;border:2px dashed rgba(34,31,26,.22);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;background:rgba(255,253,247,.4);">
+      <div style="font-size:26px;color:#9a5a30;line-height:1;margin-bottom:10px;">＋</div>
+      <div style="font-family:'Spectral';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#7c7263;">Your snap here</div>
+    </div>
+  </div>
+  <p data-note="" style="text-align:center;font-family:'Caveat';font-size:clamp(18px,2vw,24px);color:#9a5a30;margin:clamp(26px,3vw,38px) auto 0;">Drop new photos into the album as they come in.</p>
+</section>
+
+<!-- ===================== TIPS + SIGN OFF ===================== -->
+<section style="background:#221f1a;color:#f4efe3;padding:clamp(56px,8vw,100px) clamp(20px,5vw,56px);">
+  <div data-reveal="" style="max-width:940px;margin:0 auto;">
+    <div style="font-family:'Spectral';font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#c9a45f;margin-bottom:26px;text-align:center;">If You Go — Field Notes</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;">
+      <div style="border-top:2px solid #3f5540;padding-top:14px;"><div style="font-family:'DM Serif Display';font-size:clamp(19px,2vw,23px);margin-bottom:6px;color:#fdfaf2;">Start before dawn</div><p style="font-size:15px;line-height:1.65;color:#cfc6b4;margin:0;">Afternoon thunderstorms are common. Aim to summit by late morning and be heading down by noon.</p></div>
+      <div style="border-top:2px solid #9a5a30;padding-top:14px;"><div style="font-family:'DM Serif Display';font-size:clamp(19px,2vw,23px);margin-bottom:6px;color:#fdfaf2;">Reserve parking</div><p style="font-size:15px;line-height:1.65;color:#cfc6b4;margin:0;">The trailhead lot requires a paid reservation in summer — book ahead at HikeQuandary.com.</p></div>
+      <div style="border-top:2px solid #3f5540;padding-top:14px;"><div style="font-family:'DM Serif Display';font-size:clamp(19px,2vw,23px);margin-bottom:6px;color:#fdfaf2;">Respect the altitude</div><p style="font-size:15px;line-height:1.65;color:#cfc6b4;margin:0;">You start at 10,850 ft and top out at 14,265. Acclimatize a day or two, hydrate, and pace yourself.</p></div>
+      <div style="border-top:2px solid #9a5a30;padding-top:14px;"><div style="font-family:'DM Serif Display';font-size:clamp(19px,2vw,23px);margin-bottom:6px;color:#fdfaf2;">Give goats space</div><p style="font-size:15px;line-height:1.65;color:#cfc6b4;margin:0;">Mountain goats frequent the upper ridge. Admire from a distance — never feed or approach them.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:clamp(44px,6vw,72px);">
+      <p style="font-family:'DM Serif Display';font-style:italic;font-size:clamp(22px,3vw,34px);line-height:1.3;margin:0 0 18px;color:#fdfaf2;">Fifty years, two hundred fifty years, and fourteen thousand two hundred sixty-five feet.</p>
+      <div style="font-family:'Caveat';font-size:clamp(22px,2.6vw,32px);color:#c9a45f;">— The Mountain GOATs, Quandary Peak, Summer 2026</div>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showProgressBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reading experience&quot;},&quot;showFieldNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reading experience&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const p = this.props || {};
+
+    // Field-note captions toggle
+    if (p.showFieldNotes === false) {
+      document.querySelectorAll('[data-note]').forEach(n => { n.style.display = 'none'; });
+    }
+
+    // Scroll progress bar
+    const bar = document.querySelector('[data-progress]');
+    if (bar) {
+      if (p.showProgressBar === false) {
+        bar.style.display = 'none';
+      } else {
+        const upd = () => {
+          const h = document.documentElement.scrollHeight - window.innerHeight;
+          bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+        };
+        window.addEventListener('scroll', upd, { passive: true });
+        window.addEventListener('resize', upd);
+        upd();
+      }
+    }
+
+    // Reveal-on-scroll (starts visible; only hidden once JS confirms IO support)
+    const els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    if ('IntersectionObserver' in window && els.length) {
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity .7s ease, transform .7s ease';
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(el => io.observe(el));
+    }
+
+    // Sticky header shadow on scroll
+    const hd = document.querySelector('[data-head]');
+    if (hd) {
+      const s = () => {
+        hd.style.boxShadow = window.scrollY > 40 ? '0 6px 24px -12px rgba(34,31,26,.4)' : 'none';
+      };
+      window.addEventListener('scroll', s, { passive: true });
+      s();
+    }
+  }
+}
+</script>
+</body>
+</html>
